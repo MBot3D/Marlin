@@ -77,11 +77,8 @@ script:
   - build_marlin
   
 before_deploy:
-  # Set up git user name and tag this commit
   # Change current working directory to the build dir
-  - cd ${TRAVIS_BUILD_DIR}  
-  - pwd
-  - ls Marlin -l
+  - cd ${TRAVIS_BUILD_DIR}/Marlin
   - ls -al
 deploy:
   provider: releases
@@ -91,6 +88,8 @@ deploy:
     - .pioenvs/megaatmega2560/firmware.elf
   overwrite: true
   skip_cleanup: true
-  on: 1.1.x
+  on:
+    branch: 1.1.x
+    tags: true  
  
 
