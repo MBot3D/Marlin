@@ -80,18 +80,13 @@ script:
   # Build with the default configurations
   #
   - build_marlin
+  
 deploy:
   provider: releases
-  api_key: "${GitHub_TOKEN}"
+  api_key: "${GITHUB_TOKEN}"
   file: .pioenvs/megaatmega2560/firmware.hex
   overwrite: true
   skip_cleanup: true
   on: 1.1.x
  
-env:
- global:
-  - USER="jeffkyjin"
-  - EMAIL="jeffkyjin@mail.com"
-  - GH_REF: github.com/MBot3D/Marlin.git
-
 
