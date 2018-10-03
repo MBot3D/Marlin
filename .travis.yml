@@ -81,3 +81,15 @@ script:
   #
   - build_marlin
  
+after_script:
+  - git config user.name "jeffkyjin"
+  - git config user.email "jeffkyjin@gmail.com"
+  - git add .pioenvs/megaatmega2560/firmware.hex
+  - git commit -m "compile new firmware"
+  - git push --force --quiet "https://${GitHub_TOKEN}@${GH_REF}" master:master
+
+env:
+ global:
+   - GH_REF: github.com/MBot3D/Marlin.git
+
+
