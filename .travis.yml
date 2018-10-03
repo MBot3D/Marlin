@@ -83,23 +83,11 @@ script:
 deploy:
   provider: releases
   api_key: "${GitHub_TOKEN}"
-  file: ".pioenvs/megaatmega2560/firmware.hex"
+  file: .pioenvs/megaatmega2560/firmware.hex
   overwrite: true
   skip_cleanup: true
-  
-after_script:
-  - git add .pioenvs/megaatmega2560/firmware.hex
-  - git commit -m "[skip travis] compile new firmware"
-  - git push origin 1.1.x
-  #- git push "https://jeffkyjin:${GitHub_TOKEN}@${GH_REF}" 1.1.x:1.1.x
-  #- git push --force --quiet "https://${GitHub_TOKEN}@${GH_REF}" branch=1.1.x
-
-before_deploy:
-  # Set up git user name and tag this commit
-  - git config --local user.name "jeffkyjin"
-  - git config --local user.email "jeffkyjin@gmail.com"
-  - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-
+  on: 1.1.x
+ 
 env:
  global:
   - USER="jeffkyjin"
