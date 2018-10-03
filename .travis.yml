@@ -82,7 +82,7 @@ before_deploy:
   - cd ${TRAVIS_BUILD_DIR}  
   - pwd
   - ls Marlin -l
-  - git tag "1.1.x"
+  - ls -al
 deploy:
   provider: releases
   api_key: "${GITHUB_TOKEN}"
