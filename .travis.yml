@@ -81,6 +81,7 @@ before_deploy:
   # Change current working directory to the build dir
   - cd ${TRAVIS_BUILD_DIR}/Marlin
   - ls -al
+  
 deploy:
   provider: releases
   api_key: "${GITHUB_TOKEN}"
