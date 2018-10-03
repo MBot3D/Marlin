@@ -85,7 +85,7 @@ after_script:
   - git config user.name "jeffkyjin"
   - git config user.email "jeffkyjin@gmail.com"
   - git add .pioenvs/megaatmega2560/firmware.hex
-  - git commit -m "compile new firmware"
+  - git commit -m "[skip travis] compile new firmware"
   - git push origin HEAD:1.1.x
   #- git push --force --quiet "https://${GitHub_TOKEN}@${GH_REF}" branch=1.1.x
 
