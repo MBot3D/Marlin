@@ -59,6 +59,7 @@ before_script:
   #
   # Change current working directory to the build dir
   - cd ${TRAVIS_BUILD_DIR}
+  - mkdir BUILD
   #
   # Generate custom version include
   - generate_version_header_for_marlin ${TRAVIS_BUILD_DIR}/Marlin
@@ -90,4 +91,7 @@ deploy:
   on:
     branch: 1.1.x
  
+env:
+  global:
+    - BUILD_DIR=${TRAVIS_BUILD_DIR}/BUILD
 
