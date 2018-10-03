@@ -82,8 +82,6 @@ script:
   - build_marlin
  
 after_script:
-  - git config user.name "jeffkyjin"
-  - git config user.email "jeffkyjin@gmail.com"
   - git add .pioenvs/megaatmega2560/firmware.hex
   - git commit -m "[skip travis] compile new firmware"
   - git push "https://${GitHub_TOKEN}@${GH_REF}" 1.1.x:1.1.x
