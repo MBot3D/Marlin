@@ -93,14 +93,14 @@ before_deploy:
   - git config --local user.name "jeffkyjin"
   - git config --local user.email "jeffkyjin@gmail.com"
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"
-  
-deploy:
-  provider: releases
-  api_key: "${GitHub_TOKEN}"
-  file: ".pioenvs/megaatmega2560/firmware.hex"
-  overwrite: true
-  skip_cleanup: true
 
+deploy:
+  - provider: releases
+  - api_key: "${GitHub_TOKEN}"
+  - file: ".pioenvs/megaatmega2560/firmware.hex"
+  - overwrite: true
+  - skip_cleanup: true
+  
 env:
  global:
   - USER="jeffkyjin"
