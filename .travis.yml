@@ -84,12 +84,10 @@ deploy:
   provider: releases
   api_key: "${GITHUB_TOKEN}"
   file:
-    - .pioenvs/megaatmega2560/firmware.hex
-    - .pioenvs/megaatmega2560/firmware.elf
+    - Marlin/Marlin.ino.hex
   overwrite: true
   skip_cleanup: true
   on:
     branch: 1.1.x
-    tags: true  
  
 
