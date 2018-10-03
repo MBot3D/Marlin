@@ -85,11 +85,21 @@ after_script:
   - git add .pioenvs/megaatmega2560/firmware.hex
   - git commit -m "[skip travis] compile new firmware"
   - git push origin 1.1.x
-  #- git push "https://${GitHub_TOKEN}@${GH_REF}" 1.1.x:1.1.x
+  #- git push "https://jeffkyjin:${GitHub_TOKEN}@${GH_REF}" 1.1.x:1.1.x
   #- git push --force --quiet "https://${GitHub_TOKEN}@${GH_REF}" branch=1.1.x
+
+deploy:
+  provider: releases
+  api_key: "${GitHub_TOKEN}"
+  file: ".pioenvs/megaatmega2560/firmware.hex"
+  skip_cleanup: true
+  on:
+    tags: true
 
 env:
  global:
-   - GH_REF: github.com/MBot3D/Marlin.git
+  - USER="jeffkyjin"
+  - EMAIL="jeffkyjin@mail.com"
+  - GH_REF: github.com/MBot3D/Marlin.git
 
 
