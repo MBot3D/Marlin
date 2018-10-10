@@ -86,9 +86,6 @@ script:
   #
   - build_marlin
   - ls ~/.arduino15/bin -al
-  - ls /tmp/hosts.tmp
-  - ls /tmp/tmp.XH31XJCgvR
-  - ls /tmp/hosts_127_0_0_1
 before_deploy:
   - ls ~/.arduino15/bin -al
   
