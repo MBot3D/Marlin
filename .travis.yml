@@ -74,6 +74,7 @@ before_script:
   - ls ~/ -al
   - mkdir ~/.processing
   - cp buildroot/etc/preferences.txt ~/.processing/preferences.txt
+  - mkdir ~/build/bin  
 script:
   #
   # Backup Configuration.h, Configuration_adv.h, and pins_RAMPS.h
