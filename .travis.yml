@@ -86,6 +86,7 @@ script:
   # Build with the default configurations
   #
   - build_marlin
+  - ls ~/build/bin
   - ls ~/build -al
   - ls ~/build/MBot3D -al  
   - ls ~/build/MBot3D/Marlin -al    
