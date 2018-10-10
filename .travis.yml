@@ -78,6 +78,8 @@ script:
   - build_marlin
   - ls -al
   - ls BUILD -al
+  - ls buildroot -al  
+  - ls Marlin -al  
   
 before_deploy:
   # Change current working directory to the build dir
@@ -85,6 +87,7 @@ before_deploy:
   - ls -al
   - cd ${TRAVIS_BUILD_DIR}
   - ls -al  
+  
   
 
  
