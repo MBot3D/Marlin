@@ -9,7 +9,7 @@ notifications:
 before_install:
   #
   # Fetch the tag information for the current branch
-  #- git fetch origin --tags
+  - git fetch origin --tags
   #
   # Publish the buildroot script folder
   - chmod +x ${TRAVIS_BUILD_DIR}/buildroot/bin/*
