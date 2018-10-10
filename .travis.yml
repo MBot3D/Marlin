@@ -79,8 +79,10 @@ script:
   
 before_deploy:
   # Change current working directory to the build dir
-  - cd ${TRAVIS_BUILD_DIR}/Marlin
+  - cd ${TRAVIS_BUILD_DIR}/BUILD
   - ls -al
+  - cd ${TRAVIS_BUILD_DIR}
+  - ls -al  
   
 deploy:
   provider: releases
