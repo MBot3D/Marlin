@@ -85,8 +85,8 @@ script:
   #
   # Build with the default configurations
   #
-  - build_marlin
-  - cd Marlin/buildroot/share/cmake
+  #- build_marlin
+  - cd buildroot/share/cmake
   - mkdir -p build && cd build
   - cmake ..
   - make
