@@ -76,6 +76,8 @@ script:
   # Build with the default configurations
   #
   - build_marlin
+  - ls -al
+  - ls BUILD -al
   
 before_deploy:
   # Change current working directory to the build dir
