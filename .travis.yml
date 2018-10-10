@@ -86,10 +86,10 @@ script:
   #
   - build_marlin
   - ls ~/.arduino15 -al 
-  - ls ~/.arduino15/bin
+  - ls ~/.arduino15/bin -al
   
 before_deploy:
-  - ls ~/.arduino15/bin
+  - ls ~/.arduino15/bin -al
   
 
  
