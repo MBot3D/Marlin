@@ -9,7 +9,19 @@ notifications:
 before_install:
   #
   # Fetch the tag information for the current branch
-  - git fetch origin --tags
+  #- git fetch origin --tags
+  
+  
+  # Clone the script repository
+  - git clone --depth 1 https://github.com/per1234/arduino-ci-script.git "${HOME}/scripts"
+  - cd "${HOME}/scripts"
+  # Get new tags from the remote
+  - git fetch --tags
+  # Checkout the latest tag
+  - git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+  - source "${HOME}/scripts/arduino-ci-script.sh"
+  
+  
   #
   # Publish the buildroot script folder
   - chmod +x ${TRAVIS_BUILD_DIR}/buildroot/bin/*
@@ -64,7 +76,7 @@ before_script:
   #
   # Change current working directory to the build dir
   - cd ${TRAVIS_BUILD_DIR}
-  - mkdir build
+  - pwd
   #
   # Generate custom version include
   - generate_version_header_for_marlin ${TRAVIS_BUILD_DIR}/Marlin
@@ -90,8 +102,4 @@ script:
 before_deploy:
   
 
- 
-env:
-  global:
-    - BUILD_DIR=${TRAVIS_BUILD_DIR}/BUILD
 
