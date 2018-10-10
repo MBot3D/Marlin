@@ -71,9 +71,8 @@ before_script:
   - cat ${TRAVIS_BUILD_DIR}/Marlin/_Version.h
   #
   - ls ~/ -al
-  - mkdir ~/.arduino15
-  - mkdir ~/.arduino15/bin
-  - cp buildroot/etc/preferences.txt ~/.arduino15/preferences.txt
+  - mkdir ~/.processing
+  - cp buildroot/etc/preferences.txt ~/.processing/preferences.txt
 script:
   #
   # Backup Configuration.h, Configuration_adv.h, and pins_RAMPS.h
@@ -85,9 +84,8 @@ script:
   # Build with the default configurations
   #
   - build_marlin
-  - ls ~/.arduino15/bin -al
+  - ls ~/build -al
 before_deploy:
-  - ls ~/.arduino15/bin -al
   
 
  
