@@ -14,6 +14,7 @@ before_install:
   # Publish the buildroot script folder
   - chmod +x ${TRAVIS_BUILD_DIR}/buildroot/bin/*
   - export PATH=${TRAVIS_BUILD_DIR}/buildroot/bin/:${PATH}
+  - export _JAVA_OPTIONS=-Djava.io.tmpdir=${TRAVIS_BUILD_DIR}/build
   #
   # Start fb X server
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_1.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :1 -ac -screen 0 1280x1024x16"
@@ -64,7 +65,7 @@ before_script:
   #
   # Change current working directory to the build dir
   - cd ${TRAVIS_BUILD_DIR}
-  - mkdir BUILD
+  - mkdir build
   #
   # Generate custom version include
   - generate_version_header_for_marlin ${TRAVIS_BUILD_DIR}/Marlin
@@ -85,9 +86,8 @@ script:
   # Build with the default configurations
   #
   - build_marlin
-  - ls ~/.arduino15 -al 
   - ls ~/.arduino15/bin -al
-  - ls /tmp -al
+  - ls build -al
 before_deploy:
   - ls ~/.arduino15/bin -al
   
