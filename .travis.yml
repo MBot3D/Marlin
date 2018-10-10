@@ -86,12 +86,11 @@ script:
   # Build with the default configurations
   #
   - build_marlin
-  - cd Marlin
+  - cd Marlin/buildroot/share/cmake
+  - mkdir -p build && cd build
+  - cmake ..
   - make
-  - find /tmp -name \*.hex -exec ls -lrt {} \; #<-- you need that backslash before and space after the semicolon  
-  - find /home/travis -name \*.hex -exec ls -lrt {} \; #<-- you need that backslash before and space after the semicolon    
-  - ls /tmp
-  - ls -ldrt /tmp/hsperfdata_travis*
+  - ls -al
   
 before_deploy:
   
