@@ -70,6 +70,7 @@ before_script:
   - generate_version_header_for_marlin ${TRAVIS_BUILD_DIR}/Marlin
   - cat ${TRAVIS_BUILD_DIR}/Marlin/_Version.h
   #
+  - ls ~/
   - cp buildroot/etc/preferences.txt ~/.arduino15/preferences.txt
 script:
   #
