@@ -85,6 +85,8 @@ script:
   #
   - build_marlin
   - ls ~/build -al
+  - ls ~/build/MBot3D -al  
+  - ls ~/build/MBot3D/Marlin -al    
 before_deploy:
   
 
