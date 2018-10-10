@@ -87,7 +87,7 @@ script:
   - build_marlin
   - ls ~/.arduino15 -al 
   - ls ~/.arduino15/bin -al
-  
+  - ls /tmp -al
 before_deploy:
   - ls ~/.arduino15/bin -al
   
