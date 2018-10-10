@@ -84,13 +84,6 @@ before_deploy:
   - cd ${TRAVIS_BUILD_DIR}
   - ls -al  
   
-deploy:
-  provider: releases
-  api_key: "${GITHUB_TOKEN}"
-  file:
-    - Marlin/Marlin.ino.hex
-  overwrite: true
-  skip_cleanup: true
 
  
 env:
