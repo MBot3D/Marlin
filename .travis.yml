@@ -75,6 +75,7 @@ script:
   #
   # Build with the default configurations
   #
+  - pwd
   - build_marlin
   - ls -al
   - ls BUILD -al
