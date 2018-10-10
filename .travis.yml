@@ -86,8 +86,8 @@ script:
   # Build with the default configurations
   #
   - build_marlin
-  - find $TMPDIR -name \*.hex -exec ls -lrt {} \; #<-- you need that backslash before and space after the semicolon  
-  - ls -ldrt $TMPDIR/build*
+  - find /tmp -name \*.hex -exec ls -lrt {} \; #<-- you need that backslash before and space after the semicolon  
+  - ls -ldrt /tmp/build*
   
 before_deploy:
   
