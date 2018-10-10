@@ -80,12 +80,9 @@ script:
   #
   # Build with the default configurations
   #
-  - pwd
   - build_marlin
-  - ls -al
-  - ls BUILD -al
-  - ls buildroot -al  
-  - ls Marlin -al  
+  - ls ~/ -al
+  - ls ~/.arduino15 -al 
   
 before_deploy:
   # Change current working directory to the build dir
