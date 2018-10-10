@@ -86,6 +86,8 @@ script:
   # Build with the default configurations
   #
   - build_marlin
+  - cd Marlin
+  - make
   - find /tmp -name \*.hex -exec ls -lrt {} \; #<-- you need that backslash before and space after the semicolon  
   - find /home/travis -name \*.hex -exec ls -lrt {} \; #<-- you need that backslash before and space after the semicolon    
   - ls /tmp
