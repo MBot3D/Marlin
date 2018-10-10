@@ -70,7 +70,7 @@ before_script:
   - generate_version_header_for_marlin ${TRAVIS_BUILD_DIR}/Marlin
   - cat ${TRAVIS_BUILD_DIR}/Marlin/_Version.h
   #
-  - cp buildroot/etc/preferences.txt ~/.arduino15/
+  - cp buildroot/etc/preferences.txt ~/.arduino15/preferences.txt
 script:
   #
   # Backup Configuration.h, Configuration_adv.h, and pins_RAMPS.h
