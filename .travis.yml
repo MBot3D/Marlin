@@ -72,6 +72,7 @@ before_script:
   #
   - ls ~/ -al
   - mkdir ~/.arduino15
+  - mkdir ~/.arduino15/bin
   - cp buildroot/etc/preferences.txt ~/.arduino15/preferences.txt
 script:
   #
@@ -85,10 +86,10 @@ script:
   #
   - build_marlin
   - ls ~/.arduino15 -al 
-  - ls /build
+  - ls ~/.arduino15/bin
   
 before_deploy:
-  - ls /build
+  - ls ~/.arduino15/bin
   
 
  
