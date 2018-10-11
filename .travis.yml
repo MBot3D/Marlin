@@ -79,9 +79,16 @@ script:
   - mkdir -p build && cd build
   - cmake ..
   - make
-  - ls -al
 before_deploy:
   - ls -al
+deploy:
+  provider: releases
+  api_key: "${GITHUB_TOKEN}"
+  file:
+    - Marlin.hex
+  overwrite: true
+  skip_cleanup: true
+  on: 1.1.x
   
 
 
