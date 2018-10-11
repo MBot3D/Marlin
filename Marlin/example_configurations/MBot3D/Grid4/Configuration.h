@@ -773,7 +773,7 @@
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   //0 Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
-#define MIN_PROBE_EDGE 20
+#define MIN_PROBE_EDGE 10
 
 // X and Y axis travel speed (mm/m) between probes
 #define XY_PROBE_SPEED 3000       //8000
@@ -1079,12 +1079,28 @@
  * Override if the automatically selected points are inadequate.
  */
  #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 50
-  #define PROBE_PT_1_Y 230
-  #define PROBE_PT_2_X 220
-  #define PROBE_PT_2_Y 5
-  #define PROBE_PT_3_X 220
-  #define PROBE_PT_3_Y 230
+
+  // Set the number of grid points per dimension.
+  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
+
+  // Set the boundaries for probing (where the probe can reach).
+  #define LEFT_PROBE_BED_POSITION 30   //15
+  #define RIGHT_PROBE_BED_POSITION 225  //170
+  #define FRONT_PROBE_BED_POSITION 20   //20
+  #define BACK_PROBE_BED_POSITION 215   //170
+
+  // The Z probe minimum outer margin (to validate G29 parameters).
+  #define MIN_PROBE_EDGE 10
+
+  // 3 arbitrary points to probe.
+  // A simple cross-product is used to estimate the plane of the bed.
+  #define ABL_PROBE_PT_1_X 50    //75
+  #define ABL_PROBE_PT_1_Y 230
+  #define ABL_PROBE_PT_2_X 220    //250
+  #define ABL_PROBE_PT_2_Y 5
+  #define ABL_PROBE_PT_3_X 220   //250
+  #define ABL_PROBE_PT_3_Y 230
 #endif
 
 /**
