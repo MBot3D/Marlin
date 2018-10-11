@@ -23,6 +23,10 @@ install:
   - sudo mv arduino-1.8.7 /usr/local/share/arduino
   - ln -s /usr/local/share/arduino/arduino ${TRAVIS_BUILD_DIR}/buildroot/bin/arduino
   #
+  # Install: LiquidCrystal library
+  - git clone https://github.com/arduino-libraries/LiquidCrystal.git
+  - mv LiquidCrystal /usr/local/share/arduino/libraries/LiquidCrystal
+  #
   # Install: LiquidCrystal_I2C library
   - git clone https://github.com/kiyoshigawa/LiquidCrystal_I2C.git
   - mv LiquidCrystal_I2C/LiquidCrystal_I2C /usr/local/share/arduino/libraries/LiquidCrystal_I2C
