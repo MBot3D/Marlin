@@ -1533,7 +1533,7 @@
 //
 // ULTIPANEL as seen on Thingiverse.
 //
-#define ULTIPANEL
+//#define ULTIPANEL
 
 //
 // PanelOne from T3P3 (via RAMPS 1.4 AUX2/AUX3)
@@ -1730,7 +1730,7 @@
 // MKS MINI12864 with graphic controller and SD support
 // http://reprap.org/wiki/MKS_MINI_12864
 //
-//#define MKS_MINI_12864
+#define MKS_MINI_12864
 
 //
 // Factory display for Creality CR-10
