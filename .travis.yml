@@ -73,8 +73,9 @@ script:
   - cp Marlin/pins_RAMPS.h Marlin/pins_RAMPS.h.backup
   #
   # Build with the default configurations
-  #
-  #- build_marlin
+  # MBot Grid IV
+  - restore_configs
+  - use_example_configs MBot3D/Grid4
   - cd buildroot/share/cmake
   - mkdir -p build && cd build
   - cmake ..
