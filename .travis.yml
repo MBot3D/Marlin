@@ -86,7 +86,8 @@ script:
   #- cmake ..
   #- make
   - build_marlin  
-  - cp Marlin.hex ${TRAVIS_BUILD_DIR}/MarlinG4.hex
+  - ls /build/
+  - cp /build/Marlin.hex ${TRAVIS_BUILD_DIR}/MarlinG4.hex
 
   # MBot Grid IV Dual
   - cd ${TRAVIS_BUILD_DIR}  
@@ -97,7 +98,7 @@ script:
   #- cmake ..
   #- make
   - build_marlin
-  - cp Marlin.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
+  - cp /build/Marlin.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
 
   # MBot Grid II
   #- cd ${TRAVIS_BUILD_DIR}  
