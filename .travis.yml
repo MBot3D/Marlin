@@ -87,7 +87,7 @@ script:
   #- make
   - build_marlin  
   - ls build/
-  - cp build/Marlin.hex ${TRAVIS_BUILD_DIR}/MarlinG4.hex
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4.hex
 
   # MBot Grid IV Dual
   - cd ${TRAVIS_BUILD_DIR}  
@@ -99,7 +99,7 @@ script:
   #- make
   - build_marlin
   - ls build/
-  - cp build/Marlin.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
 
   # MBot Grid II
   #- cd ${TRAVIS_BUILD_DIR}  
