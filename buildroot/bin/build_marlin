@@ -5,5 +5,5 @@ case "$#" in
   * ) BOARD=arduino:avr:$1 ;;
 esac
 
-arduino -v --verify --board $BOARD Marlin/Marlin.ino --preserve-temp-files --pref build.path=/build/
+arduino -v --verify --board $BOARD Marlin/Marlin.ino --preserve-temp-files --pref build.path=build/
 
