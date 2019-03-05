@@ -53,8 +53,8 @@ install:
   #- sudo mv TMC2130Stepper /usr/local/share/arduino/libraries/TMC2130Stepper
   #
   # Install: TMC2208 Stepper Motor Controller library
-  #- git clone https://github.com/teemuatlut/TMC2208Stepper.git
-  #- sudo mv TMC2208Stepper /usr/local/share/arduino/libraries/TMC2208Stepper
+  - git clone https://github.com/teemuatlut/TMC2208Stepper.git
+  - sudo mv TMC2208Stepper /usr/local/share/arduino/libraries/TMC2208Stepper
   #
   # Install: Adafruit Neopixel library
   #- git clone https://github.com/adafruit/Adafruit_NeoPixel.git
