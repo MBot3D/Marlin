@@ -1082,7 +1082,7 @@
   #define PROBE_PT_1_X 75
   #define PROBE_PT_1_Y 228
   #define PROBE_PT_2_X 220
-  #define PROBE_PT_2_Y 5
+  #define PROBE_PT_2_Y 10
   #define PROBE_PT_3_X 220
   #define PROBE_PT_3_Y 228
 #endif
