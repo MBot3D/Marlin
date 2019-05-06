@@ -1081,10 +1081,10 @@
  #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
   #define PROBE_PT_1_X 100
   #define PROBE_PT_1_Y 228
-  #define PROBE_PT_2_X 210
+  #define PROBE_PT_2_X 235
   #define PROBE_PT_2_Y 0
-  #define PROBE_PT_3_X 210
-  #define PROBE_PT_3_Y 224
+  #define PROBE_PT_3_X 235
+  #define PROBE_PT_3_Y 228
 #endif
 
 /**
