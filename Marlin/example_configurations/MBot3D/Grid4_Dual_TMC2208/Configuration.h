@@ -768,7 +768,7 @@
  *      O-- FRONT --+
  *    (0,0)
  */
-#define X_PROBE_OFFSET_FROM_EXTRUDER 0  // -29   10  X offset: -left  +right  [of the nozzle]
+#define X_PROBE_OFFSET_FROM_EXTRUDER -30  // -29   10  X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER 0  // 10  Y offset: -front +behind [the nozzle]
 #define Z_PROBE_OFFSET_FROM_EXTRUDER 0   //0 Z offset: -below +above  [the nozzle]
 
@@ -1079,11 +1079,11 @@
  * Override if the automatically selected points are inadequate.
  */
  #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 100
+  #define PROBE_PT_1_X 70
   #define PROBE_PT_1_Y 228
-  #define PROBE_PT_2_X 240
+  #define PROBE_PT_2_X 210
   #define PROBE_PT_2_Y 5
-  #define PROBE_PT_3_X 240
+  #define PROBE_PT_3_X 210
   #define PROBE_PT_3_Y 228
 #endif
 
