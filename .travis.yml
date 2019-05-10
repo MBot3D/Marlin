@@ -137,6 +137,18 @@ script:
   - ls build/
   - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_ZYYX_TMC2208.hex
 
+  # MBot Grid Pro
+  - cd ${TRAVIS_BUILD_DIR}  
+  - restore_configs
+  - use_example_configs MBot3D/Grid_Pro
+  #- cd buildroot/share/cmake
+  #- mkdir -p build2 && cd build2
+  #- cmake ..
+  #- make
+  - build_marlin
+  - ls build/
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG_Pro.hex
+
   # MBot Grid II
   #- cd ${TRAVIS_BUILD_DIR}  
   #- restore_configs
@@ -160,6 +172,7 @@ deploy:
     - ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4_Dual_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4_ZYYX_TMC2208.hex    
+    - ${TRAVIS_BUILD_DIR}/MarlinG_Pro.hex
   overwrite: true
   skip_cleanup: true
   on: 1.1.x
