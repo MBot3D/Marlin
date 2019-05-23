@@ -871,7 +871,7 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 280
+#define X_BED_SIZE 270
 #define Y_BED_SIZE 230
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
@@ -1079,11 +1079,11 @@
  * Override if the automatically selected points are inadequate.
  */
  #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 65
+  #define PROBE_PT_1_X 55
   #define PROBE_PT_1_Y 230
-  #define PROBE_PT_2_X 250
+  #define PROBE_PT_2_X 240
   #define PROBE_PT_2_Y 5
-  #define PROBE_PT_3_X 250
+  #define PROBE_PT_3_X 240
   #define PROBE_PT_3_Y 230
 #endif
 
