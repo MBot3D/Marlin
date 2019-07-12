@@ -607,7 +607,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25}  //{ 300, 300, 5, 25}
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 3.3, 25}  //{ 300, 300, 5, 25}
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -1079,7 +1079,7 @@
  * Override if the automatically selected points are inadequate.
  */
  #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 45
+  #define PROBE_PT_1_X 50
   #define PROBE_PT_1_Y 320
   #define PROBE_PT_2_X 320
   #define PROBE_PT_2_Y 25
