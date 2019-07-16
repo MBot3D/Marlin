@@ -35,7 +35,7 @@ class EmergencyParser {
 
 public:
 
-  // Currently looking for: M108, M112, M410
+  // Currently looking for: M108, M112, M410, M601 & M602
   enum State : char {
     EP_RESET,
     EP_N,
@@ -48,6 +48,10 @@ public:
     EP_M4,
     EP_M41,
     EP_M410,
+    EP_M6,
+    EP_M60,
+    EP_M601,
+    EP_M602,
     EP_IGNORE // to '\n'
   };
 
@@ -113,6 +117,18 @@ public:
         state = (c == '0') ? EP_M410 : EP_IGNORE;
         break;
 
+      case EP_M6:
+        state = (c == '0') ? EP_M60 : EP_IGNORE;
+        break;
+
+      case EP_M60:
+        switch (c) {
+          case '1': state = EP_M601;    break;
+          case '2': state = EP_M602;    break;
+          default: state  = EP_IGNORE;
+        }        
+        break;        
+
       case EP_IGNORE:
         if (c == '\n') state = EP_RESET;
         break;
@@ -129,6 +145,16 @@ public:
             case EP_M410:
               quickstop_stepper();
               break;
+            case EP_M601:
+              advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
+              SERIAL_PROTOCOL("M601 reached");
+              SERIAL_EOL();
+              break;
+            case EP_M602:
+              advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_EXTRUDE_MORE;
+              SERIAL_PROTOCOL("M602 reached");
+              SERIAL_EOL();
+              break;                            
             default:
               break;
           }
