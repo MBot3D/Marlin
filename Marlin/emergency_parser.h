@@ -27,6 +27,10 @@
 #ifndef _EMERGENCY_PARSER_H_
 #define _EMERGENCY_PARSER_H_
 
+#if ENABLED(ADVANCED_PAUSE_FEATURE)
+  extern AdvancedPauseMenuResponse advanced_pause_menu_response;
+#endif
+
 // External references
 extern volatile bool wait_for_user, wait_for_heatup;
 void quickstop_stepper();
