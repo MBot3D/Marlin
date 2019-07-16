@@ -10471,6 +10471,10 @@ void quickstop_stepper() {
   SYNC_PLAN_POSITION_KINEMATIC();
 }
 
+void pause_resume_print() {
+  advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
+}
+
 #if HAS_LEVELING
 
   //#define M420_C_USE_MEAN

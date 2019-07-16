@@ -225,6 +225,8 @@ void kill(const char*);
 
 void quickstop_stepper();
 
+void pause_resume_print();
+
 extern uint8_t marlin_debug_flags;
 #define DEBUGGING(F) (marlin_debug_flags & (DEBUG_## F))
 
