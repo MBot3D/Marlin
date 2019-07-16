@@ -126,11 +126,7 @@ public:
         break;
 
       case EP_M60:
-        switch (c) {
-          case '1': state = EP_M601;    break;
-          case '2': state = EP_M602;    break;
-          default: state  = EP_IGNORE;
-        }        
+        state = (c == '1') ? EP_M601 : EP_IGNORE;
         break;        
 
       case EP_IGNORE:
@@ -151,14 +147,7 @@ public:
               break;
             case EP_M601:
               advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
-              SERIAL_PROTOCOLLNPGM("M601 reached");
-              SERIAL_EOL();
               break;
-            case EP_M602:
-              advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_EXTRUDE_MORE;
-              SERIAL_PROTOCOLLNPGM("M602 reached");
-              SERIAL_EOL();
-              break;                            
             default:
               break;
           }
