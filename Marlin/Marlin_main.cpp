@@ -1126,6 +1126,8 @@ inline void get_serial_commands() {
         }
         if (strcmp(command, "M112") == 0) kill(PSTR(MSG_KILLED));
         if (strcmp(command, "M410") == 0) quickstop_stepper();
+        if (strcmp(command, "M601") == 0) { advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT; }
+        if (strcmp(command, "M602") == 0) { advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_EXTRUDE_MORE; }        
       #endif
 
       #if defined(NO_TIMEOUTS) && NO_TIMEOUTS > 0
@@ -11044,6 +11046,18 @@ inline void gcode_M502() {
     if (job_running) print_job_timer.start();
   }
 
+/**
+
+M601: Advanced Pause Resume Print.
+M602: Advanced Pause Extrude More.
+*/
+inline void gcode_M601() {
+  advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
+}
+inline void gcode_M602() {
+  advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_EXTRUDE_MORE;
+}
+
   /**
    * M603: Configure filament change
    *
@@ -13023,6 +13037,8 @@ void process_parsed_command() {
 
       #if ENABLED(ADVANCED_PAUSE_FEATURE)
         case 600: gcode_M600(); break;                            // M600: Pause for Filament Change
+        case 601: gcode_M601(); break;                            // M601: Resume printing
+        case 602: gcode_M602(); break;                            // M602: Extrude more Filament
         case 603: gcode_M603(); break;                            // M603: Configure Filament Change
       #endif
 
