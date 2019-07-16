@@ -134,10 +134,12 @@ public:
         break;
 
       default:
+        SERIAL_ECHOLNPGM('EMERGENCY_PARSER');
         if (c == '\n') {
           switch (state) {
             case EP_M108:
               wait_for_user = wait_for_heatup = false;
+              SERIAL_ECHOLNPGM('M108');
               break;
             case EP_M112:
               killed_by_M112 = true;
@@ -147,6 +149,7 @@ public:
               break;
             case EP_M601:
               advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
+              SERIAL_ECHOLNPGM('M601');
               break;
             default:
               break;
