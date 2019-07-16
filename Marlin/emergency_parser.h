@@ -147,7 +147,8 @@ public:
               quickstop_stepper();
               break;
             case EP_M601:
-              advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
+              killed_by_M112 = true;
+              //advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
               break;                  
             default:
               break;
