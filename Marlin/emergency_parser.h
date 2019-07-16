@@ -151,12 +151,12 @@ public:
               break;
             case EP_M601:
               advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
-              SERIAL_PROTOCOL("M601 reached");
+              SERIAL_PROTOCOLLNPGM("M601 reached");
               SERIAL_EOL();
               break;
             case EP_M602:
               advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_EXTRUDE_MORE;
-              SERIAL_PROTOCOL("M602 reached");
+              SERIAL_PROTOCOLLNPGM("M602 reached");
               SERIAL_EOL();
               break;                            
             default:
