@@ -12815,7 +12815,7 @@ void process_parsed_command() {
       case 110: gcode_M110(); break;                              // M110: Set Current Line Number
       case 111: gcode_M111(); break;                              // M111: Set Debug Flags
 
-      case 108: gcode_M108(); break;                            // M108: Cancel Waiting
+      case 108: wait_for_user = wait_for_heatup = false; break;   // M108: Cancel Waiting
 
       #if DISABLED(EMERGENCY_PARSER)
         case 112: gcode_M112(); break;                            // M112: Emergency Stop
