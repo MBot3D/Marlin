@@ -8376,7 +8376,7 @@ inline void gcode_M105() {
   /**
    * M108: Stop the waiting for heaters in M109, M190, M303. Does not affect the target temperature.
    */
-  inline void gcode_M108() { wait_for_heatup = false; }
+  inline void gcode_M108() { wait_for_user = wait_for_heatup = false; }
 
 
   /**
