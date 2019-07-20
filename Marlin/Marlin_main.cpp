@@ -1123,7 +1123,8 @@ inline void get_serial_commands() {
           //#if ENABLED(NEWPANEL)
           wait_for_user = false;
           //#endif
-          serialprintPGM(PSTR("wait_for_user = false" "\n"))
+          serialprintPGM(PSTR("wait_for_user = false" "\n"));
+          lcd_setstatusPGM(PSTR("WAIT FALSE"));
         }
         if (strcmp(command, "M112") == 0) kill(PSTR(MSG_KILLED));
         if (strcmp(command, "M410") == 0) quickstop_stepper();
