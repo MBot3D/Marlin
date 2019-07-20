@@ -12815,12 +12815,13 @@ void process_parsed_command() {
       case 110: gcode_M110(); break;                              // M110: Set Current Line Number
       case 111: gcode_M111(); break;                              // M111: Set Debug Flags
 
+      case 108: gcode_M108(); break;                            // M108: Cancel Waiting
+
       #if DISABLED(EMERGENCY_PARSER)
-        case 108: gcode_M108(); break;                            // M108: Cancel Waiting
         case 112: gcode_M112(); break;                            // M112: Emergency Stop
         case 410: gcode_M410(); break;                            // M410: Quickstop. Abort all planned moves
       #else
-        case 108: case 112: case 410: break;                      // Silently drop as handled by emergency parser
+        case 112: case 410: break;                      // Silently drop as handled by emergency parser
       #endif
 
       #if ENABLED(HOST_KEEPALIVE_FEATURE)
