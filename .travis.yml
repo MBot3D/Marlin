@@ -126,12 +126,12 @@ script:
   # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_ZYYX_TMC2208.hex
 
   # MBot Grid IVS TMC2208
-  # - cd ${TRAVIS_BUILD_DIR}  
-  # - restore_configs
-  # - use_example_configs MBot3D/Grid4S_TMC2208
-  # - build_marlin
-  # - ls build/
-  # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208.hex
+  - cd ${TRAVIS_BUILD_DIR}  
+  - restore_configs
+  - use_example_configs MBot3D/Grid4S_TMC2208
+  - build_marlin
+  - ls build/
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208.hex
 
   # MBot Grid Pro
   # - cd ${TRAVIS_BUILD_DIR}  
@@ -162,7 +162,7 @@ deploy:
     #- ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
     #- ${TRAVIS_BUILD_DIR}/MarlinG4_Dual_TMC2208.hex
     #- ${TRAVIS_BUILD_DIR}/MarlinG4_ZYYX_TMC2208.hex
-    #- ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208.hex    
+    - ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208.hex    
     # - ${TRAVIS_BUILD_DIR}/MarlinG_Pro.hex
     - ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex    
   overwrite: true
