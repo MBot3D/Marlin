@@ -1041,6 +1041,7 @@ inline void get_serial_commands() {
   /**
    * Loop while serial characters are incoming and the queue is not full
    */
+  SERIAL_PROTOCOLPGM(" CMDS_INQUE:"); SERIAL_PROTOCOL(commands_in_queue);
   int c;
   while (commands_in_queue < BUFSIZE && (c = MYSERIAL0.read()) >= 0) {
 

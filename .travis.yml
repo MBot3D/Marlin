@@ -2,7 +2,6 @@ dist: trusty
 sudo: true
   #
 language: c
-cache: ccache
   #
 notifications:
   email: false
