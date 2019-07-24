@@ -1116,19 +1116,17 @@ inline void get_serial_commands() {
         }
       }
 
-      //#if DISABLED(EMERGENCY_PARSER)
+      #if DISABLED(EMERGENCY_PARSER)
         // Process critical commands early
         if (strcmp(command, "M108") == 0) {
           wait_for_heatup = false;
-          //#if ENABLED(NEWPANEL)
+          #if ENABLED(NEWPANEL)
           wait_for_user = false;
-          //#endif
-          serialprintPGM(PSTR("wait_for_user = false" "\n"));
-          lcd_setstatusPGM(PSTR("WAIT FALSE"));
+          #endif
         }
         if (strcmp(command, "M112") == 0) kill(PSTR(MSG_KILLED));
         if (strcmp(command, "M410") == 0) quickstop_stepper();
-      //#endif
+      #endif
 
       #if defined(NO_TIMEOUTS) && NO_TIMEOUTS > 0
         last_command_time = ms;
