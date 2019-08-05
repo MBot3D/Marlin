@@ -102,12 +102,12 @@ script:
   # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
 
   # MBot Grid IV TMC2208
-  # - cd ${TRAVIS_BUILD_DIR}  
-  # - restore_configs
-  # - use_example_configs MBot3D/Grid4_TMC2208
-  # - build_marlin
-  # - ls build/
-  # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
+  - cd ${TRAVIS_BUILD_DIR}  
+  - restore_configs
+  - use_example_configs MBot3D/Grid4_TMC2208
+  - build_marlin
+  - ls build/
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
 
     # MBot Grid IV Dual TMC2208
   # - cd ${TRAVIS_BUILD_DIR}  
