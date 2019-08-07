@@ -159,7 +159,7 @@ deploy:
     #- ${TRAVIS_BUILD_DIR}/MarlinG2.hex  
     # - ${TRAVIS_BUILD_DIR}/MarlinG4.hex
     # - ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex    
-    #- ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
+    - ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
     #- ${TRAVIS_BUILD_DIR}/MarlinG4_Dual_TMC2208.hex
     #- ${TRAVIS_BUILD_DIR}/MarlinG4_ZYYX_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208.hex    
