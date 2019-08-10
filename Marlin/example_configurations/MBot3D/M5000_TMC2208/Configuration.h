@@ -600,7 +600,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 88.89, 88.89, 800, 185.5} //{ 80, 80, 4000, 500 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 88.89, 88.89, 400, 185.5} //{ 80, 80, 4000, 500 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -639,8 +639,8 @@
  */
 #define DEFAULT_XJERK                 20.0
 #define DEFAULT_YJERK                 20.0
-#define DEFAULT_ZJERK                 0.4
-#define DEFAULT_EJERK                 5.0
+#define DEFAULT_ZJERK                 0.2
+#define DEFAULT_EJERK                 2.5
 
 /**
  * S-Curve Acceleration
@@ -1143,7 +1143,7 @@
 
 // Homing speeds (mm/m)
 #define HOMING_FEEDRATE_XY (50*60)
-#define HOMING_FEEDRATE_Z  (4*60)
+#define HOMING_FEEDRATE_Z  (2*60)
 
 // @section calibrate
 
