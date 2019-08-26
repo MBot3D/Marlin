@@ -607,7 +607,7 @@
  * Override with M203
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 300, 300, 20, 60}  //{ 300, 300, 5, 25}
+#define DEFAULT_MAX_FEEDRATE          { 300, 300, 5, 25} //{ 300, 300, 20, 60} 
 
 /**
  * Default Max Acceleration (change/s) change = mm/s
@@ -776,7 +776,7 @@
 #define MIN_PROBE_EDGE 0
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 3000       //8000
+#define XY_PROBE_SPEED 6000       //8000
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z/3
@@ -1445,7 +1445,7 @@
  * just remove some extraneous menu items to recover space.
  */
 //#define NO_LCD_MENUS
-//#define SLIM_LCD_MENUS
+#define SLIM_LCD_MENUS
 
 //
 // ENCODER SETTINGS
