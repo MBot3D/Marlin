@@ -10471,8 +10471,11 @@ void quickstop_stepper() {
   SYNC_PLAN_POSITION_KINEMATIC();
 }
 
+
 void pause_resume_print() {
+#if ENABLED(ADVANCED_PAUSE_FEATURE)  
   advanced_pause_menu_response = ADVANCED_PAUSE_RESPONSE_RESUME_PRINT;
+#endif
 }
 
 #if HAS_LEVELING
