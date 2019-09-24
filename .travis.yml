@@ -94,12 +94,12 @@ script:
   # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4.hex
 
   # MBot Grid IV Dual
-  # - cd ${TRAVIS_BUILD_DIR}  
-  # - restore_configs
-  # - use_example_configs MBot3D/Grid4_Dual
-  # - build_marlin
-  # - ls build/
-  # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
+  - cd ${TRAVIS_BUILD_DIR}  
+  - restore_configs
+  - use_example_configs MBot3D/Grid4_Dual
+  - build_marlin
+  - ls build/
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
 
   # MBot Grid IV TMC2208
   - cd ${TRAVIS_BUILD_DIR}  
@@ -174,7 +174,7 @@ deploy:
   file:
     #- ${TRAVIS_BUILD_DIR}/MarlinG2.hex  
     # - ${TRAVIS_BUILD_DIR}/MarlinG4.hex
-    # - ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex    
+    - ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208_z4.hex    
     #- ${TRAVIS_BUILD_DIR}/MarlinG4_Dual_TMC2208.hex
