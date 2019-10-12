@@ -165,6 +165,14 @@ script:
   - ls build/
   - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex
 
+  # MBot MiniPlay
+  - cd ${TRAVIS_BUILD_DIR}
+  - restore_configs
+  - use_example_configs MBot3D/MiniPlay
+  - build_marlin
+  - ls build/
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinMiniPlay.hex
+
 before_deploy:
   - ls -al
   - git tag "$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)"    
@@ -182,7 +190,9 @@ deploy:
     - ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208_z4.hex
     # - ${TRAVIS_BUILD_DIR}/MarlinG_Pro.hex
-    - ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex    
+    - ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex
+    - ${TRAVIS_BUILD_DIR}/MarlinMiniPlay.hex
+
   overwrite: true
   skip_cleanup: true
   on: 1.1.x
