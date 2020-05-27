@@ -36,13 +36,14 @@ jobs:
     - name: Check out the PR
       uses: actions/checkout@v2
 
-    - name: Run ${{ matrix.test-platform }} Tests
+    - name: Run ${{ matrix.test-platform }} Build & Tests
       run: |
         # Inline tests script
         [[ "$GITHUB_REPOSITORY" == "MarlinFirmware/Marlin" ]] || exit 0
         chmod +x buildroot/bin/*
         chmod +x buildroot/share/tests/*
         export PATH=./buildroot/bin/:./buildroot/share/tests/:${PATH}
+        build_marlin_pio . ${{ matrix.test-platform }}
         run_tests . ${{ matrix.test-platform }}
 
     - name: upload
