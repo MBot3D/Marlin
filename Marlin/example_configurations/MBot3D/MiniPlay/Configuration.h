@@ -965,7 +965,7 @@
  *   leveling in steps so you can manually adjust the Z height at each grid-point.
  *   With an LCD controller the process is guided step-by-step.
  */
-//#define AUTO_BED_LEVELING_3POINT
+#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
@@ -1079,12 +1079,12 @@
  * Override if the automatically selected points are inadequate.
  */
  #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
-  #define PROBE_PT_1_X 50
-  #define PROBE_PT_1_Y 230
-  #define PROBE_PT_2_X 220
-  #define PROBE_PT_2_Y 5
-  #define PROBE_PT_3_X 220
-  #define PROBE_PT_3_Y 230
+  #define PROBE_PT_1_X 20
+  #define PROBE_PT_1_Y 120
+  #define PROBE_PT_2_X 135
+  #define PROBE_PT_2_Y 10
+  #define PROBE_PT_3_X 135
+  #define PROBE_PT_3_Y 135
 #endif
 
 /**
