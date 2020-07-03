@@ -94,12 +94,12 @@ script:
   # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4.hex
 
   # MBot Grid IV Dual
-  - cd ${TRAVIS_BUILD_DIR}  
-  - restore_configs
-  - use_example_configs MBot3D/Grid4_Dual
-  - build_marlin
-  - ls build/
-  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
+  # - cd ${TRAVIS_BUILD_DIR}  
+  # - restore_configs
+  # - use_example_configs MBot3D/Grid4_Dual
+  # - build_marlin
+  # - ls build/
+  # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
 
   # MBot Grid IV TMC2208
   - cd ${TRAVIS_BUILD_DIR}  
@@ -158,12 +158,20 @@ script:
   # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinG_Pro.hex
 
   # MAGICFIRM M5000 TMC2208
+  # - cd ${TRAVIS_BUILD_DIR}  
+  # - restore_configs
+  # - use_example_configs MBot3D/M5000_TMC2208
+  # - build_marlin
+  # - ls build/
+  # - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex
+
+  # MAGICFIRM T480S
   - cd ${TRAVIS_BUILD_DIR}  
   - restore_configs
-  - use_example_configs MBot3D/M5000_TMC2208
+  - use_example_configs MBot3D/T480S
   - build_marlin
   - ls build/
-  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex
+  - cp build/Marlin.ino.with_bootloader.hex ${TRAVIS_BUILD_DIR}/T480S.hex
 
   # MBot MiniPlay
   - cd ${TRAVIS_BUILD_DIR}
@@ -180,9 +188,9 @@ deploy:
   provider: releases
   api_key: "${GITHUB_TOKEN}"
   file:
-    #- ${TRAVIS_BUILD_DIR}/MarlinG2.hex  
+    # - ${TRAVIS_BUILD_DIR}/MarlinG2.hex  
     # - ${TRAVIS_BUILD_DIR}/MarlinG4.hex
-    - ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
+    # - ${TRAVIS_BUILD_DIR}/MarlinG4_Dual.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4_TMC2208_z4.hex    
     #- ${TRAVIS_BUILD_DIR}/MarlinG4_Dual_TMC2208.hex
@@ -190,7 +198,8 @@ deploy:
     - ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinG4S_TMC2208_z4.hex
     # - ${TRAVIS_BUILD_DIR}/MarlinG_Pro.hex
-    - ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex
+    - ${TRAVIS_BUILD_DIR}/T480S.hex
+    # - ${TRAVIS_BUILD_DIR}/MarlinM5000_TMC2208.hex
     - ${TRAVIS_BUILD_DIR}/MarlinMiniPlay.hex
 
   overwrite: true
