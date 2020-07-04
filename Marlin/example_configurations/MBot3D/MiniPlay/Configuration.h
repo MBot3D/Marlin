@@ -445,7 +445,7 @@
  * *** IT IS HIGHLY RECOMMENDED TO LEAVE THIS OPTION ENABLED! ***
  */
 #define PREVENT_COLD_EXTRUSION
-#define EXTRUDE_MINTEMP 170
+#define EXTRUDE_MINTEMP 85
 
 /**
  * Prevent a single extrusion longer than EXTRUDE_MAXLENGTH.
@@ -1080,9 +1080,9 @@
  */
  #if ENABLED(AUTO_BED_LEVELING_3POINT) || ENABLED(AUTO_BED_LEVELING_UBL)
   #define PROBE_PT_1_X 125
-  #define PROBE_PT_1_Y 15
+  #define PROBE_PT_1_Y 25
   #define PROBE_PT_2_X 2
-  #define PROBE_PT_2_Y 15
+  #define PROBE_PT_2_Y 25
   #define PROBE_PT_3_X 125
   #define PROBE_PT_3_Y 140
 #endif
